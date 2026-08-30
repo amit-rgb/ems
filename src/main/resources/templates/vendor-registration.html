@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Registration</title>
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+<main class="container">
+    <header class="page-header">
+        <h1>Vendor Registration</h1>
+        <p><a th:href="@{/dashboard}">Back to Expense Dashboard</a></p>
+    </header>
+
+    <section class="card">
+        <h2>Register New Vendor</h2>
+        <form id="vendorRegistrationForm">
+            <label for="vendorName">Vendor Name</label>
+            <input type="text" id="vendorName" maxlength="120" required placeholder="e.g., Sharma Traders">
+
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" maxlength="20" required placeholder="e.g., 9876543210">
+
+            <button type="submit">Register Vendor</button>
+        </form>
+        <p id="vendorStatus" class="status"></p>
+    </section>
+
+    <section class="card">
+        <h2>Registered Vendors</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Vendor Name</th>
+                <th>Contact Number</th>
+            </tr>
+            </thead>
+            <tbody id="vendorsTableBody"></tbody>
+        </table>
+    </section>
+</main>
+<script th:src="@{/js/vendor-registration.js}"></script>
+</body>
+</html>
